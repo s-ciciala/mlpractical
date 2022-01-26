@@ -14,8 +14,6 @@ import torch
 
 torch.manual_seed(seed=args.seed)  # sets pytorch's seed
 
-
-
 if args.dataset_name == 'emnist':
     train_data = data_providers.EMNISTDataProvider('train', batch_size=args.batch_size,
                                                    rng=rng,
@@ -27,6 +25,9 @@ if args.dataset_name == 'emnist':
                                                   rng=rng,
                                                   flatten=False)  # initialize our rngs using the argument set seed
     num_output_classes = train_data.num_classes
+
+elif agrs.dataset_name == "LRS3":
+    print("PLACEHOLDER")
 
 elif args.dataset_name == 'cifar10':
     transform_train = transforms.Compose([
